@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactComponent from './components/ReactComponent';
+import PomodoroClock from './components/PomodoroClock';
 import './styles/styles.css';
 
-ReactDOM.render(<ReactComponent />, document.getElementById('app'));
+ReactDOM.render(<PomodoroClock />, document.getElementById('app'));

@@ -1,0 +1,12 @@
+// Header
+.header {
+  padding: 3em 0;
+  color: $orangeMedium;
+  background-color: $whiteOff;
+  text-align: center;
+  &__title {
+    margin: 0;
+    font-family: $fontTitle;
+    font-size: 5em;
+  }
+}

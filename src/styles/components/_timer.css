@@ -1,0 +1,15 @@
+// Timer
+.timer {
+  padding: 0.5em 0;
+  color: $blueLight;
+  background-color: $blueMedDark;
+  text-align: center;
+  &__title {
+    font-family: $fontTitle;
+    font-size: 4em;
+  }
+  &__content {
+    font-family: $fontContent;
+    font-size: 3.5em;
+  }
+}

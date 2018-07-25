@@ -9,8 +9,4 @@ const Timer = (props) => (
   </div>
 );
 
-Timer.defaultProps = {
-  seconds: '00'
-};
-
 export default Timer;

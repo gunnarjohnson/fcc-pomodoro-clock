@@ -7,7 +7,7 @@ import Timer from './Timer';
 class PomodoroClock extends React.Component {
 	state = {
     minutes: 25,
-    seconds: undefined,
+    seconds: '00',
     breakInactive: true,
     breakTime: 5,
     sessionTime: 25,
@@ -17,31 +17,32 @@ class PomodoroClock extends React.Component {
   startTimer = () => {
     if (this.state.timerInactive) {
       this.setState({ timerInactive: false });
+      
       this.interval = setInterval(() => {
 
-        if (this.state.seconds == undefined) {
+        if (this.state.seconds == 0) {
           if (this.state.minutes == 0  && this.state.breakInactive) {
             this.setState({ 
-              minutes: this.state.breakTime,
+              minutes: this.state.breakTime.toString().padStart(2, '0'),
               breakInactive: false
             });
           } else if (this.state.minutes == 0) {
             this.setState({
-              minutes: this.state.sessionTime,
+              minutes: this.state.sessionTime.toString().padStart(2, '0'),
               breakInactive: true
             });
           } else {
             this.setState({ 
-              minutes: this.state.minutes - 1,
+              minutes: (this.state.minutes - 1).toString().padStart(2, '0'),
               seconds: 59,
             });
           }
 
         } else if (this.state.seconds == 1) {
-          this.setState({ seconds: undefined });
+          this.setState({ seconds: '00' });
 
         } else {
-          this.setState({ seconds: this.state.seconds - 1 });
+          this.setState({ seconds: (this.state.seconds - 1).toString().padStart(2, '0') });
         }
 
       }, 1000);
@@ -52,9 +53,10 @@ class PomodoroClock extends React.Component {
   };
 
   resetTimer = () => {
+    clearInterval(this.interval);
     this.setState({
       minutes: 25,
-      seconds: undefined,
+      seconds: '00',
       breakInactive: true,
       breakTime: 5,
       sessionTime: 25,
@@ -63,32 +65,32 @@ class PomodoroClock extends React.Component {
   };
 
   breakDecrement = () => {
-    if (this.state.breakTime > 1) {
+    if (this.state.breakTime > 1 && this.state.timerInactive) {
       this.setState({ breakTime: this.state.breakTime - 1 });
     }
   };
 
   breakIncrement = () => {
-    if (this.state.breakTime < 60) {
+    if (this.state.breakTime < 60 && this.state.timerInactive) {
       this.setState({ breakTime: this.state.breakTime + 1 });
     }
   };
 
   sessionDecrement = () => {
-    if (this.state.sessionTime > 1) {
+    if (this.state.sessionTime > 1 && this.state.timerInactive) {
       this.setState({ 
-        minutes: this.state.sessionTime - 1,
-        seconds: undefined,
-        sessionTime: this.state.sessionTime - 1 
+        minutes: (this.state.sessionTime - 1).toString().padStart(2, '0'),
+        seconds: '00',
+        sessionTime: this.state.sessionTime - 1
       });
     }
   };
 
   sessionIncrement = () => {
-    if (this.state.sessionTime < 60) {
+    if (this.state.sessionTime < 60 && this.state.timerInactive) {
       this.setState({ 
-        minutes: this.state.sessionTime + 1,
-        seconds: undefined,
+        minutes: (this.state.sessionTime + 1).toString().padStart(2, '0'),
+        seconds: '00',
         sessionTime: this.state.sessionTime + 1 
       });
     }

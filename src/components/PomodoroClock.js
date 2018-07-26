@@ -148,25 +148,28 @@ class PomodoroClock extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="app-container">
         <Header />
-        <Timer
-          breakActive={this.state.breakActive}
-          minutes={this.state.minutes}
-          seconds={this.state.seconds}
-          startStopTimer={this.startStopTimer}
-          resetTimer={this.resetTimer}
-        />
-        <Break 
-          breakTime={this.state.breakTime}
-          breakDecrement={this.breakDecrement}
-          breakIncrement={this.breakIncrement}
-        />
-        <Session 
-          sessionTime={this.state.sessionTime}
-          sessionDecrement={this.sessionDecrement}
-          sessionIncrement={this.sessionIncrement}
-        />
+        <div className="app-sections">
+          <Timer
+            minutes={this.state.minutes}
+            seconds={this.state.seconds}
+            breakActive={this.state.breakActive}
+            timerActive={this.state.timerActive}
+            startStopTimer={this.startStopTimer}
+            resetTimer={this.resetTimer}
+          />
+          <Break 
+            breakTime={this.state.breakTime}
+            breakDecrement={this.breakDecrement}
+            breakIncrement={this.breakIncrement}
+          />
+          <Session 
+            sessionTime={this.state.sessionTime}
+            sessionDecrement={this.sessionDecrement}
+            sessionIncrement={this.sessionIncrement}
+          />
+        </div>
         <Audio />
       </div>
     );

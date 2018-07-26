@@ -1,18 +1,6 @@
 // Session
 .session {
-  display: inline-block;
-  width: 50%;
-  padding: 0.5em 0;
-  color: $orangeLight;
-  background-color: $grayDark;
-  font-family: $fontTitle;
-  text-align: center;
-  &__title {
-    font-family: $fontTitle;
-    font-size: 2.5em;
-  }
-  &__content {
-    font-family: $fontContent;
-    font-size: 2.5em;
+  &-container {
+    margin-left: 36px;
   }
 }

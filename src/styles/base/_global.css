@@ -1,1 +1,17 @@
 // Global
+
+h1, h2, p, button {
+  text-align: center;
+}
+
+h1, h2 {
+  font-family: $fontTitle;
+}
+
+p {
+  font-family: $fontContent;
+}
+
+button {
+  outline: 0;
+}

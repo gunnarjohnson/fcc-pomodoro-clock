@@ -1,6 +1,14 @@
 // Global
 
-h1, h2, p, button {
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+h1, h2, p {
   text-align: center;
 }
 
@@ -14,4 +22,14 @@ p {
 
 button {
   outline: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.2s color ease-in-out;
+  
+  &:hover {
+    color: $orangeMedium;
+  }
 }

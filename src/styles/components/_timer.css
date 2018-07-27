@@ -1,8 +1,9 @@
 // Timer
-.timer {
-  flex-basis: 100%;
 
+.timer {
   &-container {
-    margin: 0 auto;
+    @media screen and (width >= $device-md) {
+      margin: 0 auto;
+    }
   }
 }

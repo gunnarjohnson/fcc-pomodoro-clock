@@ -1,0 +1,122 @@
+// Pomodoro Clock
+
+.app-container {
+  position: relative;
+  min-height: calc(100vh - 50px);
+  padding-bottom: 50px;
+  background: $whiteSauvignon; // Old browsers
+  background: -moz-linear-gradient(top, $whiteSauvignon 20%, $blueLight 100%); // FF3.6-15
+  background: -webkit-linear-gradient(top, $whiteSauvignon 20%, $blueLight 100%); // Chrome10-25,Safari5.1-6
+  background: linear-gradient(to bottom, $whiteSauvignon 20%, $blueLight 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$whiteSauvignon', endColorstr='$blueLight',GradientType=0 ); // IE6-9
+}
+
+.pomodoro-clock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.clock-section {
+  flex-basis: 100%;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    margin: 10px auto;
+    border-radius: 125px;
+    background-color: $blueDark;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+    @media screen and (width >= $device-xl) {
+      width: 360px;
+      height: 360px;
+      border-radius: 180px;
+    }
+    
+    &--active {
+      background-color: $orangeMedium;
+
+      .clock-section__title {
+        color: $orangeDark;
+      }
+
+      .clock-section__content {
+        color: $white;
+      }
+
+      .clock-section__button {
+        color: $orangeMedium;
+        background-color: $orangeDark;
+
+        &:hover {
+          color: $orangeLight;
+          background-color: $brownDark;
+        }
+      }
+    }
+  }
+
+  &__title {
+    margin: 5px 0;
+    color: $blueMedium;
+    font-size: 1.75em;
+    transition: color 0.2s ease-in-out;
+    @media screen and (width >= $device-xl) {
+      margin: 10px 0;
+      font-size: 2.5em;
+    }
+  }
+
+  &__content {
+    margin: 5px 0;
+    color: $blueLight;
+    font-size: 4em;
+    transition: color 0.2s ease-in-out;
+    @media screen and (width >= $device-xl) {
+      margin: 10px 0;
+      font-size: 6em;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 20px;
+    color: $blueDark;
+    background-color: $blueMedium;
+    font-weight: 900;
+    line-height: 50px;
+    outline: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    @media screen and (width >= $device-xl) {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+    }
+
+    &:hover {
+      color: $blueLight;
+      background-color: $blueMedDark;
+      cursor: pointer;
+    }
+
+    &-container {
+      display: flex;
+      margin: 5px 0;
+      @media screen and (width >= $device-xl) {
+        margin: 10px 0;
+      }
+    }
+  }
+}

@@ -9,8 +9,9 @@
 @import 'base/_fonts';
 
 // Components
-@import 'components/_app';
-@import 'components/_break';
+@import 'components/_pomodoro-clock';
 @import 'components/_header';
-@import 'components/_session';
 @import 'components/_timer';
+@import 'components/_break';
+@import 'components/_session';
+@import 'components/_copyright';

@@ -1,0 +1,13 @@
+// Session
+
+.session {
+  @media screen and (width >= $device-md) {
+    flex-basis: auto;
+  }
+  
+  &-container {
+    @media screen and (width >= $device-md) {
+      margin-left: 36px;
+    }
+  }
+}

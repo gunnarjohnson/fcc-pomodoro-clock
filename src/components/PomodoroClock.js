@@ -1,6 +1,7 @@
 import React from 'react';
 import Audio from './Audio';
 import Break from './Break';
+import Copyright from './Copyright';
 import Header from './Header';
 import Session from './Session';
 import Timer from './Timer';
@@ -26,7 +27,6 @@ class PomodoroClock extends React.Component {
           if (this.state.minutes == 0) {
             // 0 minutes (and 0 seconds): play alarm
             this.beep.play();
-            console.log(this.state.minutes + ':' + this.state.seconds);
             if (!this.state.breakActive) {
               // Break is inactive: start break
               this.setState({ 
@@ -148,25 +148,29 @@ class PomodoroClock extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="app-container">
         <Header />
-        <Timer
-          breakActive={this.state.breakActive}
-          minutes={this.state.minutes}
-          seconds={this.state.seconds}
-          startStopTimer={this.startStopTimer}
-          resetTimer={this.resetTimer}
-        />
-        <Break 
-          breakTime={this.state.breakTime}
-          breakDecrement={this.breakDecrement}
-          breakIncrement={this.breakIncrement}
-        />
-        <Session 
-          sessionTime={this.state.sessionTime}
-          sessionDecrement={this.sessionDecrement}
-          sessionIncrement={this.sessionIncrement}
-        />
+        <div className="pomodoro-clock">
+          <Timer
+            minutes={this.state.minutes}
+            seconds={this.state.seconds}
+            breakActive={this.state.breakActive}
+            timerActive={this.state.timerActive}
+            startStopTimer={this.startStopTimer}
+            resetTimer={this.resetTimer}
+          />
+          <Break 
+            breakTime={this.state.breakTime}
+            breakDecrement={this.breakDecrement}
+            breakIncrement={this.breakIncrement}
+          />
+          <Session 
+            sessionTime={this.state.sessionTime}
+            sessionDecrement={this.sessionDecrement}
+            sessionIncrement={this.sessionIncrement}
+          />
+        </div>
+        <Copyright />
         <Audio />
       </div>
     );

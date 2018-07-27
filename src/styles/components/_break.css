@@ -1,0 +1,13 @@
+// Break
+
+.break {
+  @media screen and (width >= $device-md) {
+    flex-basis: auto;
+  }
+  
+  &-container {
+    @media screen and (width >= $device-md) {
+      margin-right: 36px;
+    }
+  }
+}

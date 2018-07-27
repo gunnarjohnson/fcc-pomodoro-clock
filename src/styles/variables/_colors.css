@@ -1,1 +1,27 @@
 // Colors
+
+// Blue
+$blueLight: #A7E6EC;
+$blueMedLight: #4DC9D4;
+$blueMedium: #14BAC9;
+$blueMedDark: #018895;
+$blueDark: #01575F;
+
+// Brown
+$brownDark: #753700;
+
+// Gray
+$grayMedium: #76624F;
+$grayDark: #424242;
+
+// Orange
+$orangeLight: #FFA85A;
+$orangeMedLight: #FF9329;
+$orangeMedium: #FF7F00;
+$orangeMedDark: #DE6E00;
+$orangeDark: #9C4900;
+
+// White
+$white: #FFFFFF;
+$whiteOff: #FBEADB;
+$whiteSauvignon: #F9F4EF

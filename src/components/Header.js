@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Header = () => (
-  <div>
-    <h1>FCC Pomodoro Clock</h1>
-  </div>
+  <header className="header">
+    <h1 className="header__title">Pomodoro Clock</h1>
+  </header>
 );
 
 export default Header;

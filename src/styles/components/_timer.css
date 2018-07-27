@@ -1,0 +1,9 @@
+// Timer
+
+.timer {
+  &-container {
+    @media screen and (width >= $device-md) {
+      margin: 0 auto;
+    }
+  }
+}

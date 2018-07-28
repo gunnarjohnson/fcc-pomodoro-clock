@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   entry: './src/app.js',
@@ -30,6 +31,23 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({template: './src/index.html'})  
+    new FaviconsWebpackPlugin({
+      logo: './src/assets/icons/icon-clock.png',
+      prefix: 'assets/icons/',
+      title: 'Pomodoro Clock',
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: false,
+        coast: false,
+        favicons: true,
+        firefox: false,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false
+      }
+    }),
+    new HtmlWebpackPlugin({template: './src/index.html'})
   ]
 };
